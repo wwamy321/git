@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--emmet-->
+	<h1>随机抽奖</h1>
+	<div id="food">
+		<div id="close"></div>
+		<ul>
+			<li>
+				<dl>
+					<dt><img src="images/1.jpg" alt=""></dt>
+					<dd>1</dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt><img src="images/2.jpg" alt=""></dt>
+					<dd>2</dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt><img src="images/3.jpg" alt=""></dt>
+					<dd>3</dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt><img src="images/4.jpg" alt=""></dt>
+					<dd>4</dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt><img src="images/5.jpg" alt=""></dt>
+					<dd>5</dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt><img src="images/6.jpg" alt=""></dt>
+					<dd>6</dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt><img src="images/7.jpg" alt=""></dt>
+					<dd>7</dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt><img src="images/8.jpg" alt=""></dt>
+					<dd>8</dd>
+				</dl>
+			</li>
+			<li class="nin">
+				<dl class="mid">
+					<dt class="middle" id="btn" ><img src="images/9.jpeg" id="pic" ></dt>
+					<dd>开始</dd>
+				</dl>
+			</li>
+		</ul>
+	</div>
+	<script>
+		//初始化变量
+		var oLi = document.getElementsByTagName("li");
+		var oBtn = document.getElementById("btn");
+		var oPic = document.getElementById("pic");
+		var num= i = t = 0; //计数器
+			oBtn.onclick = function(){
+				oPic.style.transform = "scale(0.6)";
+				oPic.style.transition = "1s";
+				view();//动画视图
+			}
+		function view(){
+			num = parseInt(Math.random()*10+20);//确定顺时针循环个数(固定))
+			console.log('固定:'+num);
+			
+			//确定递归次数
+			if(i<num){ //i:已完成的循环次数(变化)
+				i++; //每循环一个li标签 +1
+				setTimeout(view,200);
+				console.log('动态:'+i);
+			}else{
+				 i=0;  //为下一次抽奖做准备
+				oPic.style.transform = "scale(1) ";
+				oPic.style.transition = "1s";
+			}
+			
+			//动画  t:顺时针循环中每个li标签的下标
+			if(t<oLi.length-1){
+				
+				for(var j=0;j<oLi.length-1;j++){  //利用for循环清除所有样式
+					oLi[j].style.border = "2px solid #000";
+					oLi[j].style.background = "#fff";
+				}
+
+				oLi[t].style.border="2px solid #f00";
+				oLi[t].style.background="rgba(255,0,0,.4)";
+				t++;
+			}else{
+				t=0;
+			}
+
+		}
+	</script>
+</body>
+</html>

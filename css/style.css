@@ -1,0 +1,64 @@
+div,
+ul,
+li,
+dl,
+dt,
+dd {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+#food {
+    width: 600px;
+    height: 600px;
+    position: relative;
+}
+
+img {
+    width: 160px;
+}
+
+#food #close {
+    width: 190px;
+    height: 200px;
+    position: absolute;
+    left: 194px;
+    top: 240px;
+    background: rgba(0, 0, 0, .5);
+    z-index: 9;
+    display: none;
+}
+
+#food ul li {
+    float: left;
+    width: 190px;
+    height: 200px;
+    border: 2px solid #000;
+    text-align: center;
+}
+
+#food ul li dl dd {
+    text-align: center;
+    height: 30px;
+    font: 20px/30px "华文彩云";
+}
+
+#food ul li.nin {
+    position: absolute;
+    left: 194px;
+    top: 204px;
+    cursor: pointer;
+}
+/* #food ul li.nin dl dt img{
+    transform: scale(0.8);
+} */
+
+#food ul li:nth-child(4) { position: absolute; left: 388px; top: 204px; }
+#food ul li:nth-child(5) { position: absolute; left: 388px; top: 408px; }
+#food ul li:nth-child(6) { position: absolute; left: 194px; top: 408px; }
+#food ul li:nth-child(7) { position: absolute; left: 0px; top: 408px; }
+#food ul li:nth-child(8) { position: absolute; left: 0px; top: 204px; }
