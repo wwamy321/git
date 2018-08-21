@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#wrap{
+			width: 422px;
+			height: 422px;
+			position: relative;
+		}
+		#pic2{
+			position: absolute;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-62%);
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<img src="images/index.png" alt="" id="pic1" >
+		<img src="images/point.png" alt="" id="pic2" >
+	</div>
+	<script>
+		var oPic1 = document.getElementById("pic1");
+		var oPic2 = document.getElementById("pic2");
+		var arr = ['30元流量包','20币子','20流量','10流量','5猫币','谢谢参与','10猫币','一等奖','2猫币','100元流量包'];
+		oPic2.onclick = function(){
+			var i =parseInt(Math.random()*10); //获取数组下标
+			var b = i*36+720;					//定义旋转度数
+			console.log(i);
+			oPic1.style.transform="rotate("+b+"deg)";  //旋转
+			oPic1.style.transition = "4s";			   //过渡
+			 setInterval(function(){						//定时器
+				alert("恭喜你获得"+arr[i]);
+				location.reload();		
+			},3000)
+		}
+	</script>
+</body>
+</html>
