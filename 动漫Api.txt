@@ -1,0 +1,10 @@
+https://kitsu.io/api/edge
+https://kitsu.io/api/edge/anime //全部动漫
+https://kitsu.io/explore/anime/category/comedy
+
+https://kitsu.io/api/edge/anime?filter[genres]=adventure
+?filter[genres]=adventure
+  过滤   类型  =  冒险
+
+?page[limit]=5&page[offset]=0
+ 分页   一次显示5个     从0开始显示
